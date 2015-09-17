@@ -1,0 +1,77 @@
+<body style="background: #7B7688">
+  <p id="notice"><%= notice %></p>
+  <%= render partial: "elements/navbar" %>
+  
+
+  <div class="row">
+    <div class="large-12 medium-12 columns">
+      <br>
+      <h2 id="hol">Nuestras Damas</h2>
+      <div class="row">
+  <div class="medium-12 columns">
+    <p id="notice"><%= notice %></p>
+
+      
+        
+        <% @languages.models.each do |nene| %>
+          <div class="medium-3 columns">
+              <h4 class="subheader"><a href="#" data-reveal-id="myModal"><%= nene.name %></a></h4>
+              <br>
+              <% if nene.image.url %>
+          <%= image_tag nene.image.url(:medium), :style => "float:left"  %>
+          <% end %>
+              <div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+
+          
+                <div class="large-12">
+                <h2 id="modalTitle"><%= nene.name %></h2>
+                </div>
+                    
+
+                    <br>
+                    <div class="medium-4 columns">
+                    <br>
+                    <% if nene.image.url %>
+                      <%= image_tag nene.image.url, :width => '250px', :style => "float:left"  %>
+                    <% end %>
+                    </div>
+                    
+                    <div class="medium-4 columns">
+                    <% if nene.desc %>
+                      <h4 class="subheader">Detalles</h4>
+                      <p><%= nene.desc %></p>
+                    <% end %>
+                    
+                    </div>
+                    <div class="medium-4 columns">
+                    <h4 class="subheader">Idiomas</h4>
+                    <p><% nene.languages.each do |x| %>
+                          <%= x.name %>
+                          <% end %></p>
+                    
+                    <h4 class="subheader">Ciudad </h4>
+                      <% nene.citys.each do |y| %>
+                        <p><%= y.name %></p>
+                      <% end %>  
+                    <h4 class="subheader">Contacto</h4>
+                     <p><% nene.contacts.each do |f| %>
+                        <%= f.phone%> <br>
+                      <% end %></p> 
+                    
+                    
+
+
+                <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+              </div>
+
+          
+        </div>
+        
+      <% end %>
+      </div>
+    </p>
+
+    <div class="medium-12 columns">
+    <%= link_to 'Volver al Catálogo', root_path, class: "button round alert"  %>
+    </div>
+</body>

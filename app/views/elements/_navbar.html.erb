@@ -1,0 +1,51 @@
+
+<div class="contain-to-grid sticky">
+  <nav class="top-bar" data-options="sticky_on: [medium,large]" data-topbar role="navigation">
+    <ul class="title-area">
+       
+      <li class="name">
+        <h1>
+          <%= link_to "Private Group", models_path %>
+        </h1>
+      </li>
+      <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
+    </ul>
+ 
+    <section class="top-bar-section">
+       
+      <ul class="right">
+        <li class="divider"></li>
+          <!-- <li class="has-form">
+            <div class="row collapse">
+              <div class="large-8 small-9 columns">
+                <input type="text" placeholder="Busque aquí">
+              </div>
+              <div class="large-4 small-3 columns">
+                <a href="#" class="alert button expand" id="busque">Buscar</a>
+              </div>
+            </div> -->
+        </li>
+        <li class="divider"></li>
+        <li><%= link_to "Manizales", root_path %></li>
+        <li class="divider"></li>
+        <li><%= link_to "Nuestras Damas", models_path %></li>
+       <!--  <li class="divider"></li>
+        <li id="huver" class="has-dropdown not-click">
+        <%= link_to "Catálogo", root_path %>
+          <ul class="dropdown">
+            <li class="has-dropdown not-click"></li>
+            <li><%= link_to "Marcas", root_path %></li>
+            <li><%= link_to "Tipo de Cliente", root_path %></li>
+            <li><%= link_to "Línea de Producto", root_path %></li>
+          </ul>
+        </li> -->
+        <li class="divider"></li>
+        <li><%= link_to "Contactenos", contactenos_path %></li>
+        </li>
+      </ul>
+    </section>
+  </nav>
+ </div>
+
+
+ 
